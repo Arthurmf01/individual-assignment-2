@@ -38,3 +38,26 @@ def merge(left, right):
     return result
 
 #%%
+    
+# merge sort implementation
+#
+# this function uses our previously declared function merge
+def merge_sort(lst):
+    if len(lst) <= 1:
+        return lst
+    
+    middle = len(lst) // 2
+    left = lst[:middle]
+    right = lst[middle:]
+
+    return merge(merge_sort(left), merge_sort(right))
+
+#%%
+
+# Our linear search implementation
+def linear(elem, lst):
+    for i in range(len(lst)):
+        if elem == lst[i]:
+            return i
+    
+    return None
